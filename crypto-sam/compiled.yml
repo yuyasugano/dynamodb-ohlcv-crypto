@@ -39,4 +39,4 @@ Resources:
           Properties:
             Input: '{"operation": "ingest_new"}'
             Schedule: cron(0/1 * * * ? *)
-      CodeUri: s3://serverless-aws-sam-deployment/9a405771a75e01330c4ff695feafc844
+      CodeUri: s3://serverless-aws-sam-deployment/753257e58793cd0ee932da9e11f19cf8

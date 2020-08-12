@@ -27,7 +27,7 @@ class CryptoApi(object):
                 return 'fetch_ticker is empty'
             dt = datetime.datetime.utcfromtimestamp(int(str(ticker['timestamp'])[:10]))
             timestamp = dt.strftime("%Y/%m/%d %H:%M:%S")
-            item = {'name': ticker['symbol'], 'datetime': timestamp, 'high': ticker['high'], 'low': ticker['low'], 'open': ticker['open'], 'close': ticker['closel'], 'volume': ticker['baseVolume']}
+            item = {'name': ticker['symbol'], 'datetime': timestamp, 'high': ticker['high'], 'low': ticker['low'], 'open': ticker['open'], 'close': ticker['close'], 'volume': ticker['baseVolume']}
             try:
                 current_table = dynamodb.Table(table_name)
                 response = current_table.put_item(Item = item)
@@ -38,6 +38,6 @@ class CryptoApi(object):
             return 'pair is invalid in exchange'
 
     @staticmethod
-    def __format_date(d):
+    def _format_date(d):
         return d.strftime("%Y-%m-%d")
 
